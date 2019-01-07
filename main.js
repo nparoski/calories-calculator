@@ -56,4 +56,4 @@ function calcTotal(){
   <h4>Proteins: ${totalProts}<span class="small">(g)</span></h2>
   <h4>Fats: ${totalFats} <span class="small">(g)</span></h4>`
 }
-// 2. end of module|component
+// 2. end of module|component 
