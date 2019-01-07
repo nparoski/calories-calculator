@@ -53,7 +53,7 @@ function calcTotal(){
   totalInfo.innerHTML = `
   <h4>Calories: ${totalKcal.toFixed(2)} <span class="small">(kcal)</span></h2>
   <h4>Carbs: ${totalCarbs.toFixed(2)} <span class="small">(g)</span></h2>
-  <h4>Proteins: ${totalProts.toFixed(2)}<span class="small">(g)</span></h2>
+  <h4>Proteins: ${totalProts.toFixed(2)} <span class="small">(g)</span></h2>
   <h4>Fats: ${totalFats.toFixed(2)} <span class="small">(g)</span></h4>`
 }
 // 2. end of module|component 
