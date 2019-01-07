@@ -45,9 +45,9 @@ function calcTotal(){
     let carbs = productItem[i].children[3].children[0].textContent.split(" ")[1].replace('g','')
     let proteins = productItem[i].children[3].children[1].textContent.split(" ")[1].replace('g','')
     let fats = productItem[i].children[3].children[2].textContent.split(" ")[1].replace('g','')
-    totalCarbs += parseInt(carbs);
-    totalProts += parseInt(proteins);
-    totalFats += parseInt(fats);
+    totalCarbs += parseFloat(carbs);
+    totalProts += parseFloat(proteins);
+    totalFats += parseFloat(fats);
   }
   let totalKcal = (totalCarbs*4)+(totalProts*4)+(totalFats*9);
   totalInfo.innerHTML = `
