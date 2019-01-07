@@ -2,6 +2,7 @@
 // protein 4kcal in 1 gram
 // fat 9kcal in 1 gram
 
+// 1. export this as module|component
 let button = document.getElementById('btn-add');
 let product = document.getElementById('inp-product');
 let carbs = document.getElementById('inp-carbs');
@@ -23,8 +24,36 @@ button.addEventListener('click',()=>{
       <li>Fat: ${fat.value * amount.value}g <span class="small text-white-50">${fat.value}(g)</span></li>
     </ul>
   </div>`;
+  calcTotal();
   if(products.clientHeight >= 330){
     products.style.overflowY = "scroll";
     products.style.maxHeight = "330px";
   }
 })
+
+// 1. end of module|component
+
+// 2. export this as module|component
+const totalInfo = document.getElementById('total-info'); 
+function calcTotal(){
+  const productItem = document.querySelectorAll('.product--item');
+  let totalCarbs=0;
+  let totalProts=0;
+  let totalFats=0;
+
+  for (let i = 0; i < productItem.length; i++) {
+    let carbs = productItem[i].children[3].children[0].textContent.split(" ")[1].replace('g','')
+    let proteins = productItem[i].children[3].children[1].textContent.split(" ")[1].replace('g','')
+    let fats = productItem[i].children[3].children[2].textContent.split(" ")[1].replace('g','')
+    totalCarbs += parseInt(carbs);
+    totalProts += parseInt(proteins);
+    totalFats += parseInt(fats);
+  }
+  let totalKcal = (totalCarbs*4)+(totalProts*4)+(totalFats*9);
+  totalInfo.innerHTML = `
+  <h4>Calories: ${totalKcal} <span class="small">(kcal)</span></h2>
+  <h4>Carbs: ${totalCarbs} <span class="small">(g)</span></h2>
+  <h4>Proteins: ${totalProts}<span class="small">(g)</span></h2>
+  <h4>Fats: ${totalFats} <span class="small">(g)</span></h4>`
+}
+// 2. end of module|component

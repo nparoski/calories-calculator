@@ -6,7 +6,7 @@ Calories calculator is simple app for tracking your calories intake as well as m
   - Make app more modular
 
   ##### Coming soon
-  - Section for total calories intake
+  - ~~Section for total calories intake~~ *added 1/7/2019*
   - Saving calories intake onto local storage.
 
   ##### What will be added in future 
